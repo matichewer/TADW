@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+
+  mongo:
+    image: mongo:7.0.1
+    restart: always
+    container_name: mongodb
+    hostname: host-mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: clave
+    volumes:
+      - /home/wecher/db-mongodb:/data/db
+      - /home/wecher/db-mongodb-log:/var/log/
+    ports:
+      - "27017:27017"
